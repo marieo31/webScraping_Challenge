@@ -1,21 +1,28 @@
 import scrape_mars
 from flask import Flask, render_template, redirect
-# from flask_pymongo import PyMongo
+from flask_pymongo import PyMongo
 
-# Create an instance of Flask
-app = Flask(__name__)
-
-
-# Route to render index.html template using data from Mongo
-@app.route("/")
-def home():
+# # Create an instance of Flask
+# app = Flask(__name__)
 
 
-    # Return template and data
-    return render_template("templates/index.html", vacation=destination_data)
+# # Use PyMongo to establish Mongo connection
+# mongo = PyMongo(app, uri="mongodb://localhost:27017/mars_app")
 
-if __name__ == "__main__":
-    app.run(debug=True)
+
+# # Route to render index.html template using data from Mongo
+# @app.route("/")
+# def home():
+
+#     # Find one record of data from the mongo database
+#     destination_data = mongo.db.collection.find_one()
+
+
+#     # Return template and data
+#     return render_template("templates/index.html")
+
+# if __name__ == "__main__":
+#     app.run(debug=True)
 
 
 
@@ -25,4 +32,8 @@ if __name__ == "__main__":
 # print(scrape_mars.scrape_weather())
 # print(scrape_mars.scrape_mars_facts())
 # print(scrape_mars.scrape_hemispheres())
+
+dico = scrape_mars.scrape_mars()
+
+print(dico)
 

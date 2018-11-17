@@ -153,3 +153,24 @@ def scrape_hemispheres():
 
     return hemisphere_image_urls
 
+
+def scrape_mars():
+    """
+    Scrape everything and return a dictionnary with all the data
+    """
+    (news_title, news_p) = scrape_news()
+
+
+    mars_data = {
+        "news_title": news_title,
+        "news_p": news_p,
+        "jpl_url": scrape_jpl_images(),
+        "facts_tbl": scrape_mars_facts,
+        "weather": scrape_weather,
+        "hemi_pct": scrape_hemispheres,
+    }
+
+
+    return mars_data
+        
+
