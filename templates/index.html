@@ -23,8 +23,8 @@
         <div class="col-md-12">
             <div class="box">
                 <h2>Latest Mars News</h2>
-                <h3>Title goes here</h3>
-                <p> News text goes here</p>
+                <h3>{{data.news_title}}</h3>
+                <p> {{data.news_p}}</p>
             </div>
         </div>
     </div>
@@ -33,13 +33,13 @@
       <div class="col-md-8">
         <div class="box">
           <h2>Featured Mars Image</h2>
-            <img width=700px src="../motocyclette.jpg" alt="motocyclette">
+            <img width=700px src={{data.jpl_url}} alt="Jpl featured pic">
         </div>
       </div>
       <div class="col-md-4">
         <div class="box">
             <h3>Current weather in Mars</h3>
-            <p>Here goes the weather text</p>
+            <p>{{data.weather}}</p>
         </div>
         <div class="box">
             <h3>Mars fun facts</h3>
