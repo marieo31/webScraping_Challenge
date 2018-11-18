@@ -101,6 +101,8 @@ def scrape_mars_facts():
     mars_fun_facts.columns = ['Description', 'Value']
     # Remove the ":" at the end of the descriptions of the values
     mars_fun_facts['Description'] = mars_fun_facts['Description'].str[:-1]
+    
+    mars_fun_facts = mars_fun_facts.set_index("Description")
 
     return mars_fun_facts.to_html()
 
@@ -156,8 +158,6 @@ def scrape_hemispheres():
 #         break    
         
     browser.quit()
-#     print(hemisphere_image_urls)
-    
 
 
     return hemi_dico
@@ -173,9 +173,9 @@ def scrape_mars():
     mars_data = {
         "news_title": news_title,
         "news_p": news_p,
-#         "jpl_url": scrape_jpl_images(),
+        "jpl_url": scrape_jpl_images(),
         "facts_tbl": scrape_mars_facts(),
-#         "weather": scrape_weather(),
+        "weather": scrape_weather(),
         "hemi_pct": scrape_hemispheres(),
     }
 

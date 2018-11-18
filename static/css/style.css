@@ -13,11 +13,24 @@
 }
 
 
-.panel-body{
+/* .panel-body{
     align-content: center;
     align-items: center;
     align-self: center;
 }
+*/
+.panel-body{ 
+    display: block; 
+    margin-left: auto; 
+    margin-right: auto; 
+    align-self: auto;
+    text-align: center;
+}
+.img{
+    margin-left: auto;
+    margin-right: auto;
+    align-self: auto;
+} 
 
 body {
     /* background: #e4e3dcf8; */

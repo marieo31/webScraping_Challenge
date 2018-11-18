@@ -7,25 +7,6 @@ import pandas as pd
 import numpy as np
 import json
 
-# let
-# mars_data = scrape_mars.scrape_mars()
-
-# Let fake some data to see how it goes without scraping each time
-
-# create a fake dataframe f
-                 
-
-# df = pd.DataFrame({ 'A' : 1.,
-#                     'B' : pd.Timestamp('20130102'),
-#                     'C' : pd.Series(1,index=list(range(4)),dtype='float32'),
-#                     'D' : np.array([3] * 4,dtype='int32'),
-#                     'E' : pd.Categorical(["test","train","test","train"]),
-#                     'F' : 'foo' })
-# 
-# print(df)
- 
-#  '<table border="1" class="dataframe">\n  <thead>\n    <tr style="text-align: right;">\n      <th></th>\n      <th>Description</th>\n      <th>Value</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>0</th>\n      <td>Equatorial Diameter</td>\n      <td>6,792 km</td>\n    </tr>\n    <tr>\n      <th>1</th>\n      <td>Polar Diameter</td>\n      <td>6,752 km</td>\n    </tr>\n    <tr>\n      <th>2</th>\n      <td>Mass</td>\n      <td>6.42   10  Earth)</td>\n    </tr>\n    <tr>\n      <th>3</th>\n      <td>Moons</td>\n      <td>2 (Phobos  Deimos)</td>\n    </tr>\n    <tr>\n      <th>4</th>\n      <td>Orbit Distance</td>\n      <td>227,943,824 km (1.52 AU)</td>\n    </tr>\n    <tr>\n      <th>5</th>\n      <td>Orbit Period</td>\n      <td>687 days (1.9 years)</td>\n    </tr>\n    <tr>\n      <th>6</th>\n      <td>Surface Temperature</td>\n      <td>-153 to 20  C</td>\n    </tr>\n    <tr>\n      <th>7</th>\n      <td>First Record</td>\n      <td>2nd millennium BC</td>\n    </tr>\n    <tr>\n      <th>8</th>\n      <td>Recorded By</td>\n      <td>Egyptian astronomers</td>\n    </tr>\n  </tbody>\n</table>',  
-
 # to initialize the values
 mars_data =  {'news_title': 'BLABLA', 
               'news_p': "BIBLI",
