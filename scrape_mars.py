@@ -102,7 +102,7 @@ def scrape_mars_facts():
     # Remove the ":" at the end of the descriptions of the values
     mars_fun_facts['Description'] = mars_fun_facts['Description'].str[:-1]
 
-    return mars_fun_facts
+    return mars_fun_facts.to_html()
 
 def scrape_hemispheres():
     """
@@ -128,7 +128,9 @@ def scrape_hemispheres():
     soup = bs(html, "html.parser")
     # we look for the div describing the images
     results = soup.find_all('div', class_='description')
-    hemisphere_image_urls = []
+#     hemisphere_image_urls = []
+    hemi_dico = {}
+    ii = 1
     for rr in results:
         # grab the tile of the picture
         title = rr.find('h3').text    
@@ -144,14 +146,21 @@ def scrape_hemispheres():
         # look for the link
         res_pic = soup_pic.find('img',  class_="wide-image")
         url_img = url_base+res_pic['src']
-        # Append a dict with the scraped variable in the list
-        hemisphere_image_urls.append({"title":title,
-                                    "img_url": url_img})
+#         # Append a dict with the scraped variable in the list
+#         hemisphere_image_urls.append({"title":title,
+#                                     "img_url": url_img})
+        # I found easier to manage in the html to have a dictionnary
+        hemi_dico['title'+str(ii)] = title
+        hemi_dico['img_url'+str(ii)] = url_img
+        ii += 1        
+#         break    
         
     browser.quit()
-    print(hemisphere_image_urls)
+#     print(hemisphere_image_urls)
+    
 
-    return hemisphere_image_urls
+
+    return hemi_dico
 
 
 def scrape_mars():
@@ -164,10 +173,10 @@ def scrape_mars():
     mars_data = {
         "news_title": news_title,
         "news_p": news_p,
-        "jpl_url": scrape_jpl_images(),
+#         "jpl_url": scrape_jpl_images(),
 #         "facts_tbl": scrape_mars_facts(),
-        "weather": scrape_weather(),
-#         "hemi_pct": scrape_hemispheres(),
+#         "weather": scrape_weather(),
+        "hemi_pct": scrape_hemispheres(),
     }
 
 
