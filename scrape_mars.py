@@ -174,7 +174,7 @@ def scrape_mars():
         "news_title": news_title,
         "news_p": news_p,
 #         "jpl_url": scrape_jpl_images(),
-#         "facts_tbl": scrape_mars_facts(),
+        "facts_tbl": scrape_mars_facts(),
 #         "weather": scrape_weather(),
         "hemi_pct": scrape_hemispheres(),
     }
